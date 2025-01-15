@@ -21,8 +21,9 @@ bundleCommand.SetHandler((output, language, note, sort, RemoveEmptyLines, author
 {
     try
     {
-        File.Create(output.FullName);
+        FileStream file = File.Create(output.FullName);
         Console.WriteLine("file was create");
+        file.Close();
     }
     catch (DirectoryNotFoundException e)
     {
@@ -33,8 +34,10 @@ bundleCommand.SetHandler((output, language, note, sort, RemoveEmptyLines, author
 
 #region create-rsp command
 var createRSP = new Command("create-rsp", "Separate responses in stages");
+
 string fullCommandFileName = "bundle.rsp";
 var fullCommand = new List<string>();
+
 createRSP.SetHandler(() =>
 {
     //bundleOutput
@@ -66,14 +69,16 @@ createRSP.SetHandler(() =>
     string languagesInput = Console.ReadLine();
     List<Languages> selectedLanguages = new List<Languages>();
     fullCommand.Add("--language ");
+    string languageLST = "";
     foreach (var lang in languagesInput.Split(','))
     {
         if (Enum.TryParse(lang.Trim().ToUpper(), out Languages language))
         {
             selectedLanguages.Add(language);
-            fullCommand.Add(language.ToString()+", ");
+            languageLST += language.ToString() + ", ";
         }
     }
+    fullCommand.Add(languageLST);
     //bundleNote
     Console.Write("list the source of the file? (y/n) ");
     string isNoteTmp = Console.ReadLine();
@@ -94,4 +99,3 @@ rootCommand.AddCommand(createRSP);
 rootCommand.InvokeAsync(args);
 enum Languages { C_SHARP, JAVA, PYTHON, JAVASCRIPT, C_PLUS_PLUS, RUBY, PHP, SWIFT, GO, KOTLIN, R, TYPE_SCRIPT, PERL, SCALA, HASKELL }
 enum SortOptions { CODE, NAME }
-//create-rsp

@@ -28,3 +28,4 @@ C:\Users\user1\Desktop\תכנות\Dot net\פרויקט ראשון פרקטיקו
 C:\Users\user1\Desktop\תכנות\Dot net\פרויקט ראשון פרקטיקוד\PROJECT1_CLI\PROJECT1_CLI\obj\Debug\net7.0\af.pdb
 C:\Users\user1\Desktop\תכנות\Dot net\פרויקט ראשון פרקטיקוד\PROJECT1_CLI\PROJECT1_CLI\obj\Debug\net7.0\af.genruntimeconfig.cache
 C:\Users\user1\Desktop\תכנות\Dot net\פרויקט ראשון פרקטיקוד\PROJECT1_CLI\PROJECT1_CLI\obj\Debug\net7.0\ref\af.dll
+C:\Users\user1\Desktop\תכנות\Dot net\פרויקט ראשון פרקטיקוד\PROJECT1_CLI\PROJECT1_CLI\obj\Debug\net7.0\af.sourcelink.json
